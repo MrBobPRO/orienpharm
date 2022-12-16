@@ -1,0 +1,385 @@
+@font-face {
+  font-family: 'Yandex Sans Text';
+  src: url('fonts/YandexSansDisplay-Light.woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Yandex Sans Text';
+  src: url('fonts/YandexSansDisplay-Regular.woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Yandex Sans Text';
+  src: url('fonts/YandexSansDisplay-Bold.woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------------ Main styles ------------ */
+:root {
+  --main-color: #44B215;
+  --secondary-color: #D71920;
+  --helper-color: #FFDD00;
+  --text-color: #4D4D4D;
+  --background-color: #ECEFF6;
+}
+
+body {
+  position: relative;
+  font-family: 'Yandex Sans Text', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0 0 0.5rem;
+  line-height: 1.4;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+picture {
+  display: flex;
+}
+
+.unselectable {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.visually-hidden {
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.main-container {
+  max-width: 1220px;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.main-title {
+  font-size: 22px;
+  color: #1A1A1A;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 40px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.button--main {
+  background-color: var(--main-color);
+  color: black;
+}
+
+.button--main:hover {
+  background-color: var(--secondary-color);
+}
+
+.button--secondary {
+  background: radial-gradient(269.69% 100% at 50% 100%, rgba(230, 36, 43, 0.2) 0%, rgba(239, 105, 27, 0.2) 37.5%, rgba(255, 221, 0, 0.2) 100%), linear-gradient(0deg, #D71920, #D71920), #FFFFFF;
+  box-shadow: 0px 4px 16px rgba(230, 36, 43, 0.5);
+}
+
+.button--secondary:hover {
+  color: black;
+  background: radial-gradient(269.69% 100% at 50% 100%, rgba(230, 36, 43, 0.2) 0%, rgba(239, 105, 27, 0.2) 37.5%, rgba(255, 221, 0, 0.2) 100%), #ffdd00;
+  box-shadow: 0px 2px 8px rgb(29 29 29 / 25%);
+}
+
+.logo {
+  display: flex;
+}
+
+.logo__image {
+  width: 200px;
+}
+
+/* ------------ /end Main styles ------------ */
+
+
+/* ------------ Carousel navs ------------ */
+.carousel-navs {
+  display: flex;
+  margin-top: auto;
+  gap: 16px
+}
+
+.carousel-navs__item {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+.carousel-navs__item--prev {
+  color: var(--main-color);
+}
+
+.carousel-navs__item--next {
+  background-color: var(--main-color);
+  color: white;
+}
+
+.carousel-counter {
+  margin-left: 16px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.carousel-counter__seperator {
+  width: 60px;
+  height: 2px;
+  background-color: var(--main-color);
+}
+/* ------------ /end Carousel navs ------------ */
+
+
+/* ------------ Header ------------ */
+.header__inner {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  align-items: center;
+}
+
+.header__contacts {
+  display: flex;
+  gap: 28px;
+  margin: 0 100px 0 auto;
+}
+
+.header__contacts-item {
+  color: var(--text-color);
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.kit-link {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.kit-link__image * {
+  transition: 0.3s;
+}
+
+.kit-link:hover .kit-link__image * {
+  fill: var(--secondary-color);
+}
+
+/* ------------ /end Header ------------ */
+
+
+/* ------------ About ------------ */
+.about {
+  display: flex;
+}
+
+.about-left {
+  width: 50%;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: self-end;
+  text-align: right;
+  color: white;
+  background: url(img/cloud1.png) top right no-repeat, url(img/cloud2.png) left bottom no-repeat, url(img/about-bg.png) bottom no-repeat;
+  background-size: 213px, 322px, cover;
+  min-height: 640px;
+  justify-content: center;
+}
+
+.abot-left__title {
+  font-size: 68px;
+  margin-bottom: 20px;
+}
+
+.abot-left__slogan {
+  margin-bottom: 20px;
+}
+
+.about-left__desc {
+  max-width: 436px;
+}
+
+.about-right {
+  width: 50%;
+  padding: 100px 80px;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-right__title {
+  margin-bottom: 20px;
+}
+
+.about-right__desc {
+  max-width: 420px;
+  margin-bottom: 0;
+}
+
+.about-right__desc--margined {
+  margin-bottom: 20px;
+}
+/* ------------ /end About ------------ */
+
+
+/* ------------ Aim ------------ */
+.aim__inner {
+  flex-direction: column;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.aim__title {
+  margin-bottom: 20px;
+}
+
+.aim__desc {
+  margin-bottom: 32px;
+  max-width: 600px;
+}
+
+.aim-list {
+  display: flex;
+  gap: 20px;
+}
+
+.aim-card {
+  width: 33.3%;
+  color: white;
+  border-radius: 8px;
+}
+
+.aim-card__header {
+  background-color: #192E62;
+  padding: 32px 40px;
+  transition: 0.3s;
+}
+
+.aim-card:hover .aim-card__header {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.aim-card__title {
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.aim-card__desc {
+  font-weight: 300;
+}
+
+.aim-card__image-container {
+  position: relative;
+}
+
+.aim-card__image-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(25, 46, 98, 0.4), rgba(25, 46, 98, 0.4));
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.aim-card:hover .aim-card__image-bg {
+  opacity: 0;
+}
+/* ------------ /end Aim ------------ */
+
+
+/* ------------ Services ------------ */
+.advantages {
+  background-color: var(--background-color);
+}
+
+.advantages__inner {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.advantages-item {
+  display: flex;
+  gap: 40px;
+}
+
+.advantages-item__image {
+  border-radius: 8px;
+  width: 450px;
+  min-width: 450px;
+}
+
+.advantages-item__body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.advantages-item__title {
+  margin-bottom: 16px;
+}
+
+.advantages-item__desc {
+  margin-bottom: 32px;
+  padding-right: 90px;
+}
+
+.advantages-item .carousel-navs {
+  justify-content: flex-end;
+}
+/* ------------ /end Services ------------ */
