@@ -112,12 +112,15 @@ picture {
 }
 
 .button--main {
-  background-color: var(--main-color);
   color: black;
+  background: radial-gradient(269.69% 100% at 50% 100%, rgba(230, 36, 43, 0.2) 0%, rgba(239, 105, 27, 0.2) 37.5%, rgba(255, 221, 0, 0.2) 100%), #ffdd00;
+  box-shadow: 0px 2px 8px rgb(29 29 29 / 25%);
 }
 
 .button--main:hover {
-  background-color: var(--secondary-color);
+  background: radial-gradient(269.69% 100% at 50% 100%, rgba(230, 36, 43, 0.2) 0%, rgba(239, 105, 27, 0.2) 37.5%, rgba(255, 221, 0, 0.2) 100%), linear-gradient(0deg, #D71920, #D71920), #FFFFFF;
+  box-shadow: 0px 4px 16px rgba(230, 36, 43, 0.5);
+  color: white;
 }
 
 .button--secondary {
@@ -161,12 +164,19 @@ picture {
 }
 
 .carousel-navs__item--prev {
+  background-color: transparent;
   color: var(--main-color);
 }
 
 .carousel-navs__item--next {
   background-color: var(--main-color);
   color: white;
+}
+
+.carousel-navs__icon {
+  width: auto !important;
+  height: auto !important;
+  pointer-events: none;
 }
 
 .carousel-counter {
@@ -181,6 +191,7 @@ picture {
   height: 2px;
   background-color: var(--main-color);
 }
+
 /* ------------ /end Carousel navs ------------ */
 
 
@@ -272,6 +283,7 @@ picture {
 .about-right__desc--margined {
   margin-bottom: 20px;
 }
+
 /* ------------ /end About ------------ */
 
 
@@ -300,6 +312,7 @@ picture {
   width: 33.3%;
   color: white;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 .aim-card__header {
@@ -340,6 +353,7 @@ picture {
 .aim-card:hover .aim-card__image-bg {
   opacity: 0;
 }
+
 /* ------------ /end Aim ------------ */
 
 
@@ -360,8 +374,7 @@ picture {
 
 .advantages-item__image {
   border-radius: 8px;
-  width: 450px;
-  min-width: 450px;
+  width: 450px !important;
 }
 
 .advantages-item__body {
@@ -382,4 +395,176 @@ picture {
 .advantages-item .carousel-navs {
   justify-content: flex-end;
 }
+
 /* ------------ /end Services ------------ */
+
+
+/* ------------ Partners ------------ */
+.partners {}
+
+.partners__inner {
+  flex-direction: column;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.partners__title {
+  margin-bottom: 20px;
+}
+
+.partners__desc {
+  margin-bottom: 32px;
+  max-width: 580px;
+}
+
+.partners-carousel__item {
+  padding: 24px 60px;
+  border-radius: 8px;
+  border: 2px solid #192E62;
+}
+
+.partners-navs {
+  margin-top: 60px;
+}
+
+/* ------------ /end Partners ------------ */
+
+
+/* ------------ Feedback ------------ */
+.feedback {
+  background-color: var(--background-color);
+}
+
+.feedback__inner {
+  flex-direction: column;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.feedback__title {
+  margin-bottom: 20px;
+}
+
+.feedback__desc {
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+
+.feedback__main-container {
+  display: flex;
+  border-radius: 8px;
+}
+
+.feedback__image {
+  width: 400px;
+  min-width: 400px;
+}
+
+.feedback__main {
+  flex-grow: 1;
+  background-color: #192E62;
+  padding: 40px 80px 60px;
+  border-radius: 0 8px 8px 0;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.feedback__contacts {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.feedback__contacts-item {
+  color: white;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.feedback-form__input {
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 8px;
+}
+
+.feedback-form__submit {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.feedback-form__submit-icon {
+  transition: 0.3s;
+}
+
+.feedback-form__submit:hover .feedback-form__submit-icon * {
+  stroke: white;
+}
+
+.checkbox-container {
+  position: relative;
+}
+
+.checkbox {
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.checkbox-replacer {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  position: absolute;
+  background-color: #fff;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+}
+
+.checkbox-replacer::after {
+  content: '';
+  display: block;
+  width: 0.5em;
+  height: 1em;
+  border-style: solid;
+  border-width: 0 0.2em 0.2em 0;
+  border-color: #000;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  left: 4px;
+  bottom: 2px;
+  display: none;
+}
+
+.checkbox:checked+.checkbox-replacer::after {
+  display: block;
+}
+
+.accept-terms {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.accept-terms__label {
+  cursor: pointer;
+  width: max-content;
+  line-height: 1;
+  color: white;
+  font-weight: 300;
+  max-width: 200px;
+  font-size: 10px;
+}
+
+/* ------------ /end Feedback ------------ */
