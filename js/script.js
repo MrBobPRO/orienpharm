@@ -42,35 +42,57 @@ partnersNavs.querySelector('.carousel-navs__item--prev').addEventListener('click
 partnersNavs.querySelector('.carousel-navs__item--next').addEventListener('click', (evt) => {
   partnersCarousel.trigger('next.owl.carousel');
 });
+
+
+// Telephone input
+$('.feedback-form__phone-input').intlTelInput({
+  initialCountry: 'tj',
+  // geoIpLookup: function (callback) {
+  //   jQuery.get('https://ipinfo.io', function () { }, 'jsonp').always(function (resp) {
+  //     var countryCode = (resp && resp.country) ? resp.country : '';
+  //     callback(countryCode);
+  //   });
+  // },
+  nationalMode: false,
+  separateDialCode: true
+});
+
+
 // Google Maps
-// let map = document.getElementById("map");
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById('map'), {
-//     center: {
-//       lat: 40.233754,
-//       lng: 69.697530
-//     },
-//     zoom: 15,
-//     mapTypeControl: false,
-//     streetViewControl: false
-//   });
+let map = document.getElementById("map");
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {
+      lat: 38.56583369509809,
+      lng: 68.78712883519702
+    },
+    zoom: 15,
+    mapTypeControl: false,
+    streetViewControl: false
+  });
 
-//   marker = new google.maps.Marker({
-//     map: map,
-//     draggable: false,
-//     animation: google.maps.Animation.BOUNCE,
-//     position: {
-//       lat: 40.233754,
-//       lng: 69.697530
-//     },
-//   });
-//   marker.addListener('click', toggleBounce);
-// }
+  marker = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.BOUNCE,
+    position: {
+      lat: 38.56583369509809,
+      lng: 68.78712883519702
+    },
+  });
+  marker.addListener('click', toggleBounce);
+}
 
-// function toggleBounce() {
-//   if (marker.getAnimation() !== null) {
-//     marker.setAnimation(null);
-//   } else {
-//     marker.setAnimation(google.maps.Animation.BOUNCE);
-//   }
-// }
+function toggleBounce() {
+  if (marker.getAnimation() !== null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
+}
+
+
+//scroll top
+document.querySelector('.scroll-top').addEventListener('click', function () {
+  document.body.scrollIntoView({ block: 'start', behavior: 'smooth' });
+});
