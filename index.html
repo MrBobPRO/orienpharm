@@ -394,9 +394,9 @@
             <a class="feedback__contacts-item" href="#"><strong>Таджикистан, г. Душанбе,</strong><br>ул. Назаршоева, 49, кв. 3</a>
           </div>
 
-          <form action="email.php" method="POST" class="feedback-form">
-            <input class="input feedback-form__input" type="text" placeholder="Ваше имя">
-            <input class="input feedback-form__input feedback-form__phone-input" type="text" placeholder="Ваш телефон">
+          <form class="feedback-form" action="email.php" method="POST">
+            <input class="input feedback-form__input" name="name" type="text" placeholder="Ваше имя" required>
+            <input class="input feedback-form__input feedback-form__phone-input" name="phone" type="text" placeholder="Ваш телефон" required>
             <button class="button button--main feedback-form__submit">
               <svg class="feedback-form__submit-icon " width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
