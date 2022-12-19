@@ -379,6 +379,7 @@ picture {
 .about-company p:not(:last-child) {
   margin-bottom: 24px;
 }
+
 /* ------------ /end About ------------ */
 
 
@@ -495,8 +496,6 @@ picture {
 
 
 /* ------------ Partners ------------ */
-.partners {}
-
 .partners__inner {
   flex-direction: column;
   padding-top: 60px;
