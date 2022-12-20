@@ -26,13 +26,21 @@ let partnersCarousel = $('.partners-carousel').owlCarousel({
   nav: false,
   items: 4,
   dots: false,
+  responsive: {
+    0: {
+      items: 1
+    },
+    991: {
+      items: 4
+    }
+  }
 });
 
 let partnersCounter = document.querySelector('.partners-counter');
 partnersCarousel.on('changed.owl.carousel', function (event) {
   let counter = partnersCounter.querySelector('.carousel-counter__current');
-  counter.innerHTML = event.item.index - 3;
-})
+  counter.innerHTML = event.relatedTarget.relative(event.item.index) + 1;
+});
 
 let partnersNavs = document.querySelector('.partners-navs');
 partnersNavs.querySelector('.carousel-navs__item--prev').addEventListener('click', (evt) => {
